@@ -1,0 +1,21 @@
+--Need to use below command to create keystore, create cert and then import that cert to jre
+
+keytool -genkey -alias https-example -storetype JKS -keyalg RSA -keysize 2048 -validity 365 -keystore https-example.jks
+
+keytool -export -alias https-example -keystore https-example.jks -storepass ashish -file https-example.cert
+
+keytool -import -v -trustcacerts -alias https-example -keystore https-example-truststore.jks -storepass ashish -file https-example.cert
+
+
+-------
+
+Issues:
+
+--need to provide the name as "localhost" in the first command. Since keytool assign this value as host.
+
+--if a port is already running
+
+------
+netstat -ano | findstr :8443
+taskkill /PID 9104 /F
+------
