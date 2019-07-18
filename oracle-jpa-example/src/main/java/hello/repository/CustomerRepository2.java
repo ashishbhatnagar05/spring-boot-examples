@@ -32,7 +32,7 @@ public class CustomerRepository2 {
 
     public String getDataByView() {
         List<CustomerView> customerviewList = entityManager.createQuery(
-                "select cv from CustomerView2 cv", CustomerView.class).getResultList();
+                "select cv from CustomerView cv", CustomerView.class).getResultList();
 
         return customerviewList.get(0).getFirstName();
     }

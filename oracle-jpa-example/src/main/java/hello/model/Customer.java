@@ -14,6 +14,24 @@ public class Customer {
     private Long id;
     private String firstName;
     private String lastName;
+    private String ifscCode;
+    private String accountNumber;
+
+    public String getIfscCode() {
+        return ifscCode;
+    }
+
+    public void setIfscCode(String ifscCode) {
+        this.ifscCode = ifscCode;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
 
     protected Customer() {}
 

@@ -2,52 +2,42 @@ package hello.DBViews;
 
 import org.hibernate.annotations.Immutable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Immutable
-@Table(name = "CUSTOMER_VIEW2")
+@Table(name = "CUSTOMER_VIEW")
 public class CustomerView {
 
-    @Id
-    private Long id;
+  @Id
+  @Column(name="FIRSTNAME")
+  private String firstName;
+  @Column(name = "LASTNAME")
+  private String lastName;
 
-    private String firstName;
+  public CustomerView(String firstName, String lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
 
-    private String lastName;
+  public CustomerView() {}
 
-    public CustomerView(Long id, String firstName, String lastName) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
+  public String getFirstName() {
+    return firstName;
+  }
 
-    public CustomerView() {
-    }
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
 
-    public Long getId() {
-        return id;
-    }
+  public String getLastName() {
+    return lastName;
+  }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
 }

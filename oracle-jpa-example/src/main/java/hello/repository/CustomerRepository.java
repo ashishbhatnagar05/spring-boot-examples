@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
 
-    List<Customer> findByLastName(String lastName);
-
+    Customer findByLastName(String lastName);
+    Customer findByFirstNameAndLastName(String firstName,String lastName);
     Customer findById(Integer id);
 }
